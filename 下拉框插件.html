@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./icons/iconfont.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        ul {
+            width: 300px;
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            margin-left: -150px;
+        }
+        ul li {
+            height: 30px;
+            line-height: 30px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            padding: 0 10px;
+        }
+        ul li:last-child {
+            border-bottom: 1px solid #ccc;
+        }
+        #countent {
+            width: 300px;
+            margin: 50px auto;
+            position: relative;
+        }
+        #seleDiv {
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            padding: 0px 25px 0px 10px;
+            cursor: pointer;
+        }
+        .more_than {
+            width: '300px';
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="countent">
+        
+        <!-- 1. 由 div 与 ul(选择项)  构成 -->
+        <div class="more_than" id="seleDiv">
+            <!-- <span id="text">请选择...</span> -->
+            <!-- <input type="text" style="width: 100%;height: 100%;padding-left: 10px" placeholder="请选择..."> -->
+        </div>
+        
+    </div>
+</body>
+<script src="./jquery-1.12.4.js"></script>
+<script src="./icons/iconfont.js"></script>
+<script src="./下拉框插件.js"></script>
+<script>
+
+
+    var selectPlugin = new SelectPlugin({
+        data : [
+                {"Id": "a81a60fe-4cfc-4eab-bcca-a97f63ea069e",
+                "Name": "绞吸船",
+                "Code": "01"},
+                {
+                "Id": "1d6ede2f-4c5c-4326-8cdf-6de372331342",
+                "Name": "耙吸船",
+                "Code": "02"
+                },
+                {
+                "Id": "4837b00d-fa2c-490b-bcf9-457567dc5102",
+                "Name": "抓斗船",
+                "Code": "03"
+                },
+                {
+                "Id": "a5671212-d479-4a03-9a56-1a017937bce3",
+                "Name": "铺排船",
+                "Code": "04"
+                },
+                {
+                "Id": "c2ed2c10-013c-4166-83aa-5d5ca85fd3b2",
+                "Name": "拖轮",
+                "Code": "05"
+                },
+                {"Id": "a81a60fe-4cfc-4eab-bcca-a97f63ea069e",
+                "Name": "绞吸船",
+                "Code": "01"},
+                {
+                "Id": "1d6ede2f-4c5c-4326-8cdf-6de372331342",
+                "Name": "耙吸船",
+                "Code": "02"
+                },
+                
+            ],
+        $elementMount: $('#seleDiv'),
+        $isShowQingkong: true,   
+        isSearch: true,
+        isMultipleChoice: true,
+        callback: function(selePluginThis ,e){
+                var that = selePluginThis;
+                if(that.isMultipleChoice){
+                    var MultipleChoiceTex = '';
+
+                    $('.xuanzhongIcon').parent('li').each((index,item) => {
+                        MultipleChoiceTex += $(item).text() + ',';
+                    })
+                    MultipleChoiceTex = MultipleChoiceTex.substring(0,MultipleChoiceTex.length-1)
+                    $('#seleDiv .elementMountTextSpan').text(MultipleChoiceTex?MultipleChoiceTex:'请选择...');
+                }else {
+                    var selectedTex = $(e.target).text();
+                    $('#seleDiv .elementMountTextSpan').text(selectedTex);
+                }
+            }
+        });   
+   
+</script>
+</html>

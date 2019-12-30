@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="qingkong" unicode="&#58895;" d="M512 896C230.4 896 0 665.6 0 384s230.4-512 512-512 512 230.4 512 512-230.4 512-512 512z m256-716.8l-51.2-51.2L512 332.8 307.2 128l-51.2 51.2L460.8 384 256 588.8l51.2 51.2L512 435.2 716.8 640l51.2-51.2L563.2 384l204.8-204.8z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="xuanzhong" unicode="&#59092;" d="M204.992 499.008a63.872 63.872 0 0 1-90.24-0.192l-5.568-5.632c-24.96-24.96-24.512-65.856 0.384-90.752L448 64l529.856 500.416a61.632 61.632 0 0 1 0.96 88.768l-5.632 5.632a66.432 66.432 0 0 1-92.096 1.408L448 256 204.992 499.008z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
