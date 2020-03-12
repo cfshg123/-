@@ -8,8 +8,10 @@
         this.searchVal = '';
         this.xuanzhongIconStyle = option.xuanzhongIconStyle || {"position":"absolute","right":"10px"};  // 配置选中图标的样式
         this.qingkongIconStyle = option.qingkongIconStyle || {"position":"absolute","right":"10px","top":"0px","line-height":"32px"};
-        this.callback = option.callback;
-        this.init()
+        // this.callback = option.callback;
+        this.afterClick = option.afterClick;
+        this.init();
+        
     }
 
     SelectPlugin.prototype.init =function(){
@@ -116,7 +118,8 @@
             }else {
                
             }
-            this.callback(this,e);
+            // this.callback(this,e);
+            this.afterClick && this.afterClick(this,e)
             this.searchVal = ''
             $('.isSearch').val('')
         })
